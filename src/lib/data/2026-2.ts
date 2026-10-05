@@ -1,6 +1,6 @@
 import { Area } from '$lib/models/area';
 import { QuestionAlternative, Version, type Question } from '$lib/models/question';
-import { tagsForArea, TagEM, TagMC } from '$lib/models/subareas';
+import { tagsForArea, TagEM, TagMC, TagTD } from '$lib/models/subareas';
 
 const defaultData = {
 	year: 2026,
@@ -335,7 +335,7 @@ export default <Question[]>[
 		area: Area.Eletromagnetismo,
 		tags: tagsForArea<Area.Eletromagnetismo>(TagEM.CamposEletrostaticos, TagEM.EquacoesMaxwell),
 		help: {
-			youtubeVideoId: videos[Area.MecanicaClassica]
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 1,
 		statement: {
@@ -372,7 +372,7 @@ export default <Question[]>[
 		area: Area.Eletromagnetismo,
 		tags: tagsForArea<Area.Eletromagnetismo>(TagEM.CamposMagneticosCorrentesEstacionarias),
 		help: {
-			youtubeVideoId: videos[Area.MecanicaClassica]
+			youtubeVideoId: videos[Area.Eletromagnetismo]
 		},
 		questionNumber: 2,
 		statement: {
@@ -397,6 +397,268 @@ export default <Question[]>[
 			},
 			{
 				text: String.raw`$\frac{F}{L}=\frac{3}{2}\frac{\mu_0 I^2}{\pi d}$`,
+				number: QuestionAlternative.E
+			}
+		]
+	},
+	{
+		...defaultData,
+		version: Version.A,
+		area: Area.Eletromagnetismo,
+		tags: tagsForArea<Area.Eletromagnetismo>(
+			TagEM.EquacoesPoissonLaplace,
+			TagEM.CamposEletrostaticos
+		),
+		help: {
+			youtubeVideoId: videos[Area.Eletromagnetismo]
+		},
+		questionNumber: 3,
+		statement: {
+			text: String.raw`Um capacitor esférico é constituído por duas cascas condutoras concêntricas, de raios $a$ e $b$, com $a < b$. O espaço entre as cascas é preenchido por vácuo. Determine o raio $R$, com $a < R < b$, tal que metade da energia eletrostática total armazenada no capacitor esteja localizada na região $a < r < R$.`
+		},
+		alternatives: [
+			{
+				text: String.raw`$R=\frac{2ab}{a+b}$`,
+				number: QuestionAlternative.A
+			},
+			{
+				text: String.raw`$R=\frac{a+b}{2}$`,
+				number: QuestionAlternative.B
+			},
+			{
+				text: String.raw`$R=\frac{ab}{b-a}\ln \left(\frac{b}{a}\right)$`,
+				number: QuestionAlternative.C
+			},
+			{
+				text: String.raw`$R=\frac{\sqrt{a^2+b^2}}{2}$`,
+				number: QuestionAlternative.D
+			},
+			{
+				text: String.raw`$R=\sqrt{ab}$`,
+				number: QuestionAlternative.E
+			}
+		]
+	},
+	{
+		...defaultData,
+		version: Version.A,
+		area: Area.Eletromagnetismo,
+		tags: tagsForArea<Area.Eletromagnetismo>(TagEM.EquacoesMaxwell),
+		help: {
+			youtubeVideoId: videos[Area.Eletromagnetismo]
+		},
+		questionNumber: 4,
+		statement: {
+			text: String.raw`Uma onda eletromagnética plana propaga-se no vácuo no sentido positivo do eixo $z$. Seu campo elétrico é dado por
+			$$E(z,t) = \frac{E_0}{5} (3\^x − 4\^y) \cos (kz − \omega t).$$
+			Qual é o campo magnético B(z,t) e a intensidade média I da onda?`
+		},
+		alternatives: [
+			{
+				text: String.raw`$B(z,t) = \frac{E_0}{5c} (4\^x + 3\^y) \cos (kz − \omega t),\hspace{15px}I=\frac{1}{2}c\epsilon_0E_0^2$`,
+				number: QuestionAlternative.A
+			},
+			{
+				text: String.raw`$B(z,t) = \frac{E_0}{5c} (-4\^x - 3\^y) \cos (kz − \omega t),\hspace{15px}I=\frac{1}{2}c\epsilon_0E_0^2$`,
+				number: QuestionAlternative.B
+			},
+			{
+				text: String.raw`$B(z,t) = \frac{E_0}{5c} (4\^x + 3\^y) \cos (kz − \omega t),\hspace{15px}I=c\epsilon_0E_0^2$`,
+				number: QuestionAlternative.C
+			},
+			{
+				text: String.raw`$B(z,t) = \frac{E_0}{5c} (3\^x - 4\^y) \cos (kz − \omega t),\hspace{15px}I=\frac{1}{2}c\epsilon_0E_0^2$`,
+				number: QuestionAlternative.D
+			},
+			{
+				text: String.raw`$B(z,t) = \frac{E_0}{5c} (-4\^x + 3\^y) \cos (kz − \omega t),\hspace{15px}I=\frac{1}{4}c\epsilon_0E_0^2$`,
+				number: QuestionAlternative.E
+			}
+		]
+	},
+	{
+		...defaultData,
+		version: Version.A,
+		area: Area.Eletromagnetismo,
+		tags: tagsForArea<Area.Eletromagnetismo>(TagEM.EquacoesMaxwell),
+		help: {
+			youtubeVideoId: videos[Area.Eletromagnetismo]
+		},
+		questionNumber: 5,
+		statement: {
+			text: String.raw`Um cilindro condutor longo de raio $a$, cujo eixo é perpendicular ao plano $xy$, é colocado em um campo elétrico externo uniforme $E = E_0 \^x$. Sendo $\rho$ e $\varphi$ as coordenadas cilíndricas usuais, temos que para $\rho < a$ (região no interior do cilindro) o potencial eletrostático é nulo. Já na região $\rho > a$, o potencial eletrostático é dado por $V (\rho,\varphi) = −E_0\left ( ρ − \frac{a^2}{\rho} \right)\cos \varphi$. A densidade superficial de carga $\sigma$ na parede do cilindro é dada por:`
+		},
+		alternatives: [
+			{
+				text: String.raw`$\sigma=2\epsilon_0E_0\cos \phi$`,
+				number: QuestionAlternative.A
+			},
+			{
+				text: String.raw`$\sigma=2\epsilon_0E_0\sin \phi$`,
+				number: QuestionAlternative.B
+			},
+			{
+				text: String.raw`$\sigma=2\epsilon_0E_0\cos^2 \phi$`,
+				number: QuestionAlternative.C
+			},
+			{
+				text: String.raw`$\sigma=2\epsilon_0E_0$`,
+				number: QuestionAlternative.D
+			},
+			{
+				text: String.raw`$\sigma=0$, pois o cilindro condutor é um equipotencial`,
+				number: QuestionAlternative.E
+			}
+		]
+	},
+	{
+		...defaultData,
+		version: Version.A,
+		area: Area.Eletromagnetismo,
+		tags: tagsForArea<Area.Eletromagnetismo>(TagEM.PropagacaoOndasEletromagneticas),
+		help: {
+			youtubeVideoId: videos[Area.Eletromagnetismo]
+		},
+		questionNumber: 6,
+		statement: {
+			text: String.raw`Em um certo regime de frequência $\omega$, a dispersão de ondas eletromagnéticas em metais é caracterizada pela relação de dispersão $\omega^2 = c^2k^2 + \omega^2_P$, onde $c$ é a velocidade da luz no vácuo, $k$ é o módulo do vetor de onda e $\omega_P$ é a frequência de plasma, um parâmetro característico do meio. Com base nesta relação de dispersão, podemos afirmar que:`
+		},
+		alternatives: [
+			{
+				text: String.raw`Para $\omega > \omega_P$ , a onda eletromagnética se propaga no metal com velocidade de fase maior do que $c$, mas velocidade de grupo menor do que $c$.`,
+				number: QuestionAlternative.A
+			},
+			{
+				text: String.raw`$\omega_P$ é uma frequência de corte e só há propagação de ondas eletromagnéticas no metal para $\omega = \omega_P$ .`,
+				number: QuestionAlternative.B
+			},
+			{
+				text: String.raw`$\omega_P$ é uma frequência de corte e só há propagação de ondas eletromagnéticas em um metal para $\omega < \omega_P$ .`,
+				number: QuestionAlternative.C
+			},
+			{
+				text: String.raw`Para $\omega < \omega_P$, a onda eletromagnética se propaga no metal com velocidade de fase maior do que $c$, mas velocidade de grupo menor do que $c$.`,
+				number: QuestionAlternative.D
+			},
+			{
+				text: String.raw`A relação entre $\omega$ e $\omega_P$ não tem qualquer consequência para a propagação de ondas eletromagnéticas em um metal.`,
+				number: QuestionAlternative.E
+			}
+		]
+	},
+	{
+		...defaultData,
+		version: Version.A,
+		area: Area.Eletromagnetismo,
+		tags: tagsForArea<Area.Eletromagnetismo>(
+			TagEM.ForcaEletromotrizInduzida,
+			TagEM.EquacoesMaxwell
+		),
+		help: {
+			youtubeVideoId: videos[Area.Eletromagnetismo]
+		},
+		questionNumber: 7,
+		statement: {
+			text: String.raw`Considere um circuito constituído por um capacitor de capacitância $C$ e um resistor de resistência $R$. Inicialmente, o circuito está aberto e o capacitor encontra-se carregado com carga total $Q_0$. Em $t = 0$, a chave do circuito é fechada. Qual dos gráficos abaixo melhor representa a carga $Q(t)$ no capacitor, em unidades de $Q_0$, em função do tempo $t$, em unidades de $RC$?`,
+			image: '2026-2/em-7.webp'
+		},
+		alternatives: [
+			{
+				text: String.raw`$IV$`,
+				number: QuestionAlternative.A
+			},
+			{
+				text: String.raw`$II$`,
+				number: QuestionAlternative.B
+			},
+			{
+				text: String.raw`$III$`,
+				number: QuestionAlternative.C
+			},
+			{
+				text: String.raw`$I$`,
+				number: QuestionAlternative.D
+			},
+			{
+				text: String.raw`$V$`,
+				number: QuestionAlternative.E
+			}
+		]
+	},
+	{
+		...defaultData,
+		version: Version.A,
+		area: Area.Termodinamica,
+		tags: tagsForArea<Area.Termodinamica>(TagTD.SegundaLeiEntropia),
+		help: {
+			youtubeVideoId: videos[Area.Termodinamica]
+		},
+		questionNumber: 1,
+		statement: {
+			text: String.raw`Um corpo sólido encontra-se inicialmente à temperatura $4T_0$ e é colocado em contato térmico com um reservatório mantido à temperatura constante $T_0$ até atingir o equilíbrio térmico. Neste intervalo de temperatura, a capacidade térmica do corpo é dada por $C(T) = A + BT$, onde $A$ e $B$ são constantes positivas. $A$ variação total de entropia do universo (sistema + reservatório térmico) $(\Delta S)$ após atingir o equilíbrio é dada por:`
+		},
+		alternatives: [
+			{
+				text: String.raw`$\Delta S = A(3-\ln 4) + \frac{9}{2}BT_0$`,
+				number: QuestionAlternative.A
+			},
+			{
+				text: String.raw`$\Delta S = A(4-\ln 3) + 3BT_0$`,
+				number: QuestionAlternative.B
+			},
+			{
+				text: String.raw`$\Delta S = -A\ln 4 - 3BT_0$`,
+				number: QuestionAlternative.C
+			},
+			{
+				text: String.raw`$\Delta S = 3A + \frac{15}{2}BT_0$`,
+				number: QuestionAlternative.D
+			},
+			{
+				text: String.raw`$\Delta S = 0$`,
+				number: QuestionAlternative.E
+			}
+		]
+	},
+	{
+		...defaultData,
+		version: Version.A,
+		area: Area.Termodinamica,
+		tags: tagsForArea<Area.Termodinamica>(TagTD.TrabalhoPrimeiraLei),
+		help: {
+			youtubeVideoId: videos[Area.Termodinamica]
+		},
+		questionNumber: 2,
+		statement: {
+			text: String.raw`Considere 1 mol de um gás ideal monoatômico $(C_v = \frac{3}{2}R$ e $C_p = \frac{5} {2} R)$ que realiza um ciclo termodinâmico reversível $A \to B \to C \to A$ composto pelas seguintes etapas:
+			<ol>
+				<li>$A \to B$: Expansão <b>isotérmica</b> à temperatura $T_0$, a partir do volume $V_A = V_0$ até $V_B = 3V_0$.</li>
+				
+				<li>$B \to C$: Compressão <b>isobárica</b> à pressão $P_B$ até que o volume retorne ao valor inicial $V_C = V_0$.</li>
+				
+				<li>$C \to A$: Aquecimento <b>isocórico</b> mantido ao volume $V_0$, retornando o gás ao estado inicial A com temperatura $T_0$.</li>
+			</ol>
+			Assinale a alternativa que expressa corretamente o <b>trabalho total realizado pelo gás no ciclo</b> $(W_c)$:`
+		},
+		alternatives: [
+			{
+				text: String.raw`$W_c=RT_0\left(\ln 3-\frac{2}{3}\right)$`,
+				number: QuestionAlternative.A
+			},
+			{
+				text: String.raw`$W_c=RT_0\ln 3$`,
+				number: QuestionAlternative.B
+			},
+			{
+				text: String.raw`$W_c=\frac{2}{3}RT_0$`,
+				number: QuestionAlternative.C
+			},
+			{
+				text: String.raw`$W_c=RT_0\left(\ln 3 + \frac{2}{3}\right)$`,
+				number: QuestionAlternative.D
+			},
+			{
+				text: String.raw`$W_c=0$`,
 				number: QuestionAlternative.E
 			}
 		]
