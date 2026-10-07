@@ -657,7 +657,10 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.Termodinamica,
-		tags: tagsForArea<Area.Termodinamica>(TagTD.TrabalhoPrimeiraLei),
+		tags: tagsForArea<Area.Termodinamica>(
+			TagTD.TrabalhoPrimeiraLei,
+			TagTD.VariaveisEquacoesEstadoDiagramasPVT
+		),
 		help: {
 			youtubeVideoId: videos[Area.Termodinamica]
 		},
@@ -700,15 +703,17 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.Termodinamica,
-		tags: tagsForArea<Area.Termodinamica>(TagTD.TrabalhoPrimeiraLei),
+		tags: tagsForArea<Area.Termodinamica>(TagTD.TrabalhoPrimeiraLei, TagTD.FuncoesTermodinamicas),
 		help: {
 			youtubeVideoId: videos[Area.Termodinamica]
 		},
 		questionNumber: 3,
 		statement: {
 			text: String.raw`Para 1 mol de um gás ideal de capacidade térmica a volume constante $C_v$ , a energia livre de Helmholtz $F (T, V )$ é dada por: 
-          $$F (T, V ) = C_v T\left[ 1 − \ln\left(\frac{T}{T0}\right)\right]  − RT \ln\left(\frac{V}{V0}\right)− T S_0,$$
-onde $T_0$,$S_0$ e $V_0$ denotam valores constantes. O gás é submetido a uma expansão isotérmica reversível à temperatura $T$, alterando seu volume de $V_1$ para $5V_1$. O trabalho $W$ realizado pelo gás ao longo do processo acima vale`
+			
+			$$F (T, V ) = C_v T\left[ 1 − \ln\left(\frac{T}{T0}\right)\right]  − RT \ln\left(\frac{V}{V0}\right)− T S_0,$$
+			
+			onde $T_0$,$S_0$ e $V_0$ denotam valores constantes. O gás é submetido a uma expansão isotérmica reversível à temperatura $T$, alterando seu volume de $V_1$ para $5V_1$. O trabalho $W$ realizado pelo gás ao longo do processo acima vale`
 		},
 		alternatives: [
 			{
@@ -737,20 +742,19 @@ onde $T_0$,$S_0$ e $V_0$ denotam valores constantes. O gás é submetido a uma e
 		...defaultData,
 		version: Version.A,
 		area: Area.Termodinamica,
-		tags: tagsForArea<Area.Termodinamica>(TagTD.TrabalhoPrimeiraLei),
+		tags: tagsForArea<Area.Termodinamica>(TagTD.FuncoesTermodinamicas),
 		help: {
 			youtubeVideoId: videos[Area.Termodinamica]
 		},
 		questionNumber: 4,
 		statement: {
 			text: String.raw`De acordo com a Termodinâmica, a função entropia $S(U, V, N )$ descrevendo um sistema qualquer deve satisfazer as seguintes propriedades: 
-      <ol type='a'>
-        <li> Extensividade: $S(\lambda U, \lambda V, \lambda N ) = \lambda S(U, V, N )$ para $\lambda > 0$.
-        <li> Temperatura positiva:  $\left(\frac{\partial S}{\partial U}\right)_{V,N} = \frac{1}{T} > 0$.
-        <li> Estabilidade (concavidade): $\left(\frac{\partial^2 S}{\partial U^2}\right)_{V,N} < 0$ (garante $C_v > 0$).
-
-    </ol>
-Sendo $A > 0$ uma constante, assinale a alternativa termodinamicamente consistente para $U, V, N > 0$:`
+			<ol type='a'>
+				<li> Extensividade: $S(\lambda U, \lambda V, \lambda N ) = \lambda S(U, V, N )$ para $\lambda > 0$.
+				<li> Temperatura positiva:  $\left(\frac{\partial S}{\partial U}\right)_{V,N} = \frac{1}{T} > 0$.
+				<li> Estabilidade (concavidade): $\left(\frac{\partial^2 S}{\partial U^2}\right)_{V,N} < 0$ (garante $C_v > 0$).
+			</ol>
+			Sendo $A > 0$ uma constante, assinale a alternativa termodinamicamente consistente para $U, V, N > 0$:`
 		},
 		alternatives: [
 			{
@@ -779,17 +783,13 @@ Sendo $A > 0$ uma constante, assinale a alternativa termodinamicamente consisten
 		...defaultData,
 		version: Version.A,
 		area: Area.FisicaModerna,
-		tags: tagsForArea<Area.FisicaModerna>(TagFM.EnergiaMomentoRelativisticos),
+		tags: tagsForArea<Area.FisicaModerna>(TagFM.PropagacaoLuzRelatividadeNewtoniana),
 		help: {
 			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 1,
 		statement: {
-			text: String.raw`Considere a situação ilustrada na figura. Uma fonte de luz S desconhecida é diretamente
-      detectada pelo espectrômetro $D1$. Parte da luz é espalhada por um meio frio $M$ e detectada pelo espectrômetro
-      $D2$. Finalmente, a luz de $S$ que atravessa $M$ é detectada pelo espectrômetro $D3$. Considere que os espectrômetros 
-      estão perfeitamente calibrados. Assinale a alternativa abaixo que consistentemente representa os espectros da 
-      luz (intensidade por comprimento de onda $\lambda$, em unidades arbitrárias) em $D1$, $D2$ e $D3$, respectivamente.`,
+			text: String.raw`Considere a situação ilustrada na figura. Uma fonte de luz S desconhecida é diretamente detectada pelo espectrômetro $D1$. Parte da luz é espalhada por um meio frio $M$ e detectada pelo espectrômetro $D2$. Finalmente, a luz de $S$ que atravessa $M$ é detectada pelo espectrômetro $D3$. Considere que os espectrômetros estão perfeitamente calibrados. Assinale a alternativa abaixo que consistentemente representa os espectros da luz (intensidade por comprimento de onda $\lambda$, em unidades arbitrárias) em $D1$, $D2$ e $D3$, respectivamente.`,
 			image: '2026-2/fm-1.webp'
 		},
 		alternatives: [
@@ -834,17 +834,13 @@ Sendo $A > 0$ uma constante, assinale a alternativa termodinamicamente consisten
 		...defaultData,
 		version: Version.A,
 		area: Area.FisicaModerna,
-		tags: tagsForArea<Area.FisicaModerna>(TagFM.EnergiaMomentoRelativisticos),
+		tags: tagsForArea<Area.FisicaModerna>(TagFM.FotonsPropriedadesCorpusculares),
 		help: {
 			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 2,
 		statement: {
-			text: String.raw`Uma molécula é formada por dois átomos idênticos de massa m. O potencial 
-      efetivo de interação entre os átomos é $V (r) = V_0 \left[\left(\frac{a}{r}\right)^{2\alpha} − 2 \left(\frac{a}{r}\right)^\alpha\right]$, onde $V_0$, 
-      $\alpha$ e $a$ são constantes positivas e $r$ é a distância entre os átomos. Qual é a diferença 
-      de energia entre o estado fundamental e o primeiro estado rotacional excitado dessa molécula? 
-      Assuma que $V_0$ é suficientemente grande e que o tamanho do átomo é muito menor que $a$.`
+			text: String.raw`Uma molécula é formada por dois átomos idênticos de massa m. O potencial efetivo de interação entre os átomos é $V (r) = V_0 \left[\left(\frac{a}{r}\right)^{2\alpha} − 2 \left(\frac{a}{r}\right)^\alpha\right]$, onde $V_0$, $\alpha$ e $a$ são constantes positivas e $r$ é a distância entre os átomos. Qual é a diferença de energia entre o estado fundamental e o primeiro estado rotacional excitado dessa molécula? Assuma que $V_0$ é suficientemente grande e que o tamanho do átomo é muito menor que $a$.`
 		},
 		alternatives: [
 			{
@@ -865,6 +861,158 @@ Sendo $A > 0$ uma constante, assinale a alternativa termodinamicamente consisten
 			},
 			{
 				text: String.raw`$\hbar\sqrt{\frac{\alpha(\alpha+1)V_0}{ma^2}}$`,
+				number: QuestionAlternative.E
+			}
+		]
+	},
+	{
+		...defaultData,
+		version: Version.A,
+		area: Area.FisicaModerna,
+		tags: tagsForArea<Area.FisicaModerna>(TagFM.FotonsPropriedadesCorpusculares),
+		help: {
+			youtubeVideoId: videos[Area.FisicaModerna]
+		},
+		questionNumber: 3,
+		statement: {
+			text: String.raw`Considere as seguintes afirmações sobre a radiação de um corpo negro ideal em $d$ dimensões:
+			<ol type='I'>
+				<li> A densidade de modos de frequência angular $\omega$ por unidade de volume é $g (\omega) = A_d \omega^{d−1}$, onde $A_d$ é uma constante que depende da dimensão $d$
+				<li> A energia média de um modo de frequência angular $\omega$ é $\braket{\epsilon (\omega)} = \frac{\hbar\omega}{e^{\frac{\hbar\omega}{k_B T}} +1}$ , que não depende de $d$.
+				<li> O potencial químico associado é $\mu = 0$ porque o número total de fótons não é conservado. Eles são absorvidos e reemitidos continuamente.
+				<li> A densidade de energia total (lei de Stefan-Boltzmann) é $\int_0^\infty g(\omega)\braket{\epsilon(\omega)}d\omega\propto T^{2d-2}$, onde $T$ é a temperatura.
+			</ol>
+			Qual das alternativas abaixo é a correta?`
+		},
+		alternatives: [
+			{
+				text: 'Apenas as afirmações I e III são verdadeiras',
+				number: QuestionAlternative.A
+			},
+			{
+				text: 'Apenas a afirmação II é falsa',
+				number: QuestionAlternative.B
+			},
+			{
+				text: 'Apenas a afirmação IV é falsa',
+				number: QuestionAlternative.C
+			},
+			{
+				text: 'Nenhuma das afirmações é verdadeirea',
+				number: QuestionAlternative.D
+			},
+			{
+				text: 'todas as afirmações são verdadeiras',
+				number: QuestionAlternative.E
+			}
+		]
+	},
+	{
+		...defaultData,
+		version: Version.A,
+		area: Area.FisicaModerna,
+		tags: tagsForArea<Area.FisicaModerna>(TagFM.FotonsPropriedadesCorpusculares),
+		help: {
+			youtubeVideoId: videos[Area.FisicaModerna]
+		},
+		questionNumber: 4,
+		statement: {
+			text: String.raw`Em um determinado referencial inercial, uma partícula relativística está sujeita a se mover em uma dimensão sob o potencial $V (x) = V_0 |x/a|^\alpha$ , onde $V_0$, $a$ e $\alpha$ são constantes reais positivas. Sendo $m$ a massa de repouso da partícula e assumindo que ela se encontra inicialmente em repouso em $x = a$, qual é o módulo da velocidade da partícula quando ela passa pela origem?`
+		},
+		alternatives: [
+			{
+				text: String.raw`$c\sqrt{1-\frac{1}{\left(1+\frac{V_0}{mc^2}\right)^2}}$`,
+				number: QuestionAlternative.A
+			},
+			{
+				text: String.raw`$c\sqrt{1-\frac{1}{\left(1+\frac{V_0}{mc^2}\right)^\alpha}}$`,
+				number: QuestionAlternative.B
+			},
+			{
+				text: String.raw`$c\sqrt{1-\frac{1}{\left(1+\frac{V_0}{mc^2}\right)^{\alpha+1}}}$`,
+				number: QuestionAlternative.C
+			},
+			{
+				text: String.raw`$c\sqrt{1-\frac{1}{\left[\left(1+\frac{V_0}{mc^2}\right)^\alpha\right]^2}}$`,
+				number: QuestionAlternative.D
+			},
+			{
+				text: String.raw`$c\sqrt{1-\frac{1}{\left[\left(1+\frac{V_0}{mc^2}\right)^2\right]^\alpha}}$`,
+				number: QuestionAlternative.E
+			}
+		]
+	},
+	{
+		...defaultData,
+		version: Version.A,
+		area: Area.FisicaModerna,
+		tags: tagsForArea<Area.FisicaModerna>(TagFM.FotonsPropriedadesCorpusculares),
+		help: {
+			youtubeVideoId: videos[Area.FisicaModerna]
+		},
+		questionNumber: 5,
+		statement: {
+			text: String.raw`Um átomo de hidrogênio encontra-se em um estado estacionário no qual o momento angular orbital do elétron tem módulo $\sqrt{6}\hbar$. Um valor possível para a componente $z$ do momento angular orbital do elétron é`
+		},
+		alternatives: [
+			{
+				text: String.raw`$\hbar$`,
+				number: QuestionAlternative.A
+			},
+			{
+				text: String.raw`$\sqrt{6}\hbar$`,
+				number: QuestionAlternative.B
+			},
+			{
+				text: String.raw`$3\hbar$`,
+				number: QuestionAlternative.C
+			},
+			{
+				text: String.raw`$\frac{5}{2}\hbar$`,
+				number: QuestionAlternative.D
+			},
+			{
+				text: String.raw`$\frac{\sqrt{6}}{2}\hbar$`,
+				number: QuestionAlternative.E
+			}
+		]
+	},
+	{
+		...defaultData,
+		version: Version.A,
+		area: Area.FisicaModerna,
+		tags: tagsForArea<Area.FisicaModerna>(TagFM.FotonsPropriedadesCorpusculares),
+		help: {
+			youtubeVideoId: videos[Area.FisicaModerna]
+		},
+		questionNumber: 6,
+		statement: {
+			text: String.raw`Um feixe de partículas de massa $m$ e energia $E$ incide, vindo da região $x < 0$, sobre um degrau de potencial dado por $V (x) = 0$ para $x < 0$ e $V (x) = V_0 > 0$ para $x > 0$. Com relação à função de onda da partícula, considere as seguintes afirmações:
+			<ol type='I'>
+				<li> Se $E < V_0$, a corrente transmitida através do degrau é nula.
+				<li> Se $E < V_0$, a densidade de probabilidade de detectar a partícula é nula em todas as posições $x > 0$.
+				<li> Se $E > V_0$, a probabilidade de reflexão pelo degrau é nula.
+			</ol>Assinale a alternativa correta.`
+		},
+		alternatives: [
+			{
+				text: 'Apenas a afirmação I está correta.',
+				number: QuestionAlternative.A
+			},
+			{
+				text: 'Apenas a afirmação II está correta.',
+				number: QuestionAlternative.B
+			},
+			{
+				text: 'Apenas a afirmação III está correta.',
+				number: QuestionAlternative.C
+			},
+			{
+				text: 'Apenas as afirmações I e II estão corretas.',
+				number: QuestionAlternative.D
+			},
+			{
+				text: 'As afirmações I, II e III estão corretas.',
 				number: QuestionAlternative.E
 			}
 		]
