@@ -1,6 +1,6 @@
 import { Area } from '$lib/models/area';
 import { QuestionAlternative, Version, type Question } from '$lib/models/question';
-import { tagsForArea, TagEM, TagMC, TagTD } from '$lib/models/subareas';
+import { tagsForArea, TagEM, TagFM, TagMC, TagTD } from '$lib/models/subareas';
 
 const defaultData = {
 	year: 2026,
@@ -30,7 +30,12 @@ export default <Question[]>[
 		},
 		questionNumber: 1,
 		statement: {
-			text: String.raw`Um projétil de massa m é lançado verticalmente para cima a partir da superfície da Terra, em uma posição sobre a linha do equador, com velocidade inicial $v_0\^z$. Considere que a Terra gira com velocidade angular constante de módulo $\Omega$, o campo gravitacional local é $g = −g\^z$, e as direções $\^x$ e $\^y$ apontam, respectivamente, para leste e norte. Determine, em primeira ordem em $\Omega$, as equações de movimento para as coordenadas $x$ e $y$ neste referencial. Despreze a resistência do ar e efeitos de segunda ordem em $\Omega$.`
+			text: String.raw`Um projétil de massa m é lançado verticalmente para cima a partir da superfície 
+      da Terra, em uma posição sobre a linha do equador, com velocidade inicial $v_0\^z$. Considere que 
+      a Terra gira com velocidade angular constante de módulo $\Omega$, o campo gravitacional local é 
+      $g = −g\^z$, e as direções $\^x$ e $\^y$ apontam, respectivamente, para leste e norte. Determine, 
+      em primeira ordem em $\Omega$, as equações de movimento para as coordenadas $x$ e $y$ neste 
+      referencial. Despreze a resistência do ar e efeitos de segunda ordem em $\Omega$.`
 		},
 		alternatives: [
 			{
@@ -65,13 +70,19 @@ export default <Question[]>[
 		},
 		questionNumber: 2,
 		statement: {
-			text: String.raw`Um cubo homogêneo de massa $m$ e lado $L$ está em repouso sobre uma superfície horizontal, plana, dura e rugosa. Uma força externa de módulo $F > 0$ é aplicada uniformemente sobre a aresta superior direita, como ilustrado na figura.<br/>
-			A aceleração da gravidade é $−g\^z$, o coeficiente de atrito estático entre o cubo e a superfície é $\mu$ e na região abaixo do cubo existe uma pressão $P(x)$, onde a coordenada $x$ varia no intervalo $−L/2 \leq x \leq L/2$.
-			Considere as seguintes afirmações:<br/><br/>
-			I.   A força de atrito total entre o bloco e a superfície é −μmgˆx.<br/>
-			II.  A pressão $P (x) = mg/L^2$ é constante.<br/>
-			III. Pelo equilíbrio de forças, a pressão é tal que $L\int^{L/2}_{-L/2} dx P(x) = mg$.<br/>
-			IV.  Pelo equilíbrio de torques, a pressão é tal que $\int^{L/2}_{−L/2} dx\hspace{2px}xP(x) = F$.<br/>
+			text: String.raw`Um cubo homogêneo de massa $m$ e lado $L$ está em repouso sobre uma superfície 
+      horizontal, plana, dura e rugosa. Uma força externa de módulo $F > 0$ é aplicada uniformemente 
+      sobre a aresta superior direita, como ilustrado na figura.<br/>
+			A aceleração da gravidade é $−g\^z$, o coeficiente de atrito estático entre o cubo e a superfície 
+      é $\mu$ e na região abaixo do cubo existe uma pressão $P(x)$, onde a coordenada $x$ varia no 
+      intervalo $−L/2 \leq x \leq L/2$.
+
+			Considere as seguintes afirmações:<br/><ol type='I'>
+			  <li> A força de atrito total entre o bloco e a superfície é −μmgˆx.<br/>
+			  <li> A pressão $P (x) = mg/L^2$ é constante.<br/>
+			  <li> Pelo equilíbrio de forças, a pressão é tal que $L\int^{L/2}_{-L/2} dx P(x) = mg$.<br/>
+			  <li> Pelo equilíbrio de torques, a pressão é tal que $\int^{L/2}_{−L/2} dx\hspace{2px}xP(x) = F$.
+      <ol/>
 			Assinale a alternativa correta.`,
 			image: '2026-2/mc-2.webp'
 		},
@@ -108,9 +119,15 @@ export default <Question[]>[
 		},
 		questionNumber: 3,
 		statement: {
-			text: String.raw`Situação 1: Um feixe contínuo de partículas não interagentes de massa $m$, viajando com velocidade constante de módulo $v$, incide perpendicularmente sobre uma placa circular plana de raio $R$ (vide a figura). Uma força externa de módulo $F$ é aplicada para manter a placa em repouso sob a ação do feixe.<br/><br/>
+			text: String.raw`<b>Situação 1:</b> Um feixe contínuo de partículas não interagentes de massa $m$, 
+      viajando com velocidade constante de módulo $v$, incide perpendicularmente sobre uma placa 
+      circular plana de raio $R$ (vide a figura). Uma força externa de módulo $F$ é aplicada para 
+      manter a placa em repouso sob a ação do feixe.<br/><br/>
 			
-			Situação 2: Um cone reto de semiângulo $\alpha$ (vide a figura) é fixado à placa de modo que sua base circular se encaixe perfeitamente sobre ela, com o vértice apontado na direção oposta ao fluxo de partículas. Para manter o conjunto em repouso sob o mesmo feixe, a força externa necessária passa a ser $F'$<br/><br/>
+			<b>Situação 2:</b> Um cone reto de semiângulo $\alpha$ (vide a figura) é fixado à placa de modo que 
+      sua base circular se encaixe perfeitamente sobre ela, com o vértice apontado na direção 
+      oposta ao fluxo de partículas. Para manter o conjunto em repouso sob o mesmo feixe, a força 
+      externa necessária passa a ser $F'$<br/><br/>
 
 			Supondo que todas as colisões entre as partículas e as superfícies são elásticas, determine a razão $F/F'$.`,
 			image: '2026-2/mc-3.webp'
@@ -151,11 +168,18 @@ export default <Question[]>[
 		},
 		questionNumber: 4,
 		statement: {
-			text: String.raw`Uma partícula de massa $m$ move-se sem atrito sob a ação da gravidade $\bold{g} = −g\^z$ sobre a superfície de um parabolóide de revolução descrito por $z(r) = \alpha r^2$, onde $r$ é a distância ao eixo $z$ e $\alpha > 0$ é uma constante (vide figura). Utilizando coordenadas cilíndricas $(r,θ,z)$, considere as seguintes afirmações sobre o sistema:</br></br>
+			text: String.raw`Uma partícula de massa $m$ move-se sem atrito sob a ação da gravidade 
+      $\bold{g} = −g\^z$ sobre a superfície de um parabolóide de revolução descrito por 
+      $z(r) = \alpha r^2$, onde $r$ é a distância ao eixo $z$ e $\alpha > 0$ é uma constante 
+      (vide figura). Utilizando coordenadas cilíndricas $(r,θ,z)$, considere as seguintes 
+      afirmações sobre o sistema:</br><ol type='I'>
 			
-			I. A lagrangiana do sistema em função das coordenadas generalizadas, $r$ e $θ$, e de suas respectivas velocidades, $\dot{r}$ e $\dot{θ}$, é dada por $L = \frac{1}{2} m(1 + 4\alpha^2r^2)\dot{r}^2 + \frac{1}{2} mr^2 \dot{\theta}^2 − mg\alpha r^2$.</br>
-			II. Como a coordenada $\theta$ é cíclica, o momento angular conjugado $p_\theta = mr^2\dot{\theta}$ é uma constante de movimento.</br>
-			III. O potencial efetivo associado ao movimento radial da partícula é $V_{eff} = p^2θ^2mr^2 + mg\alpha r^2$.</br></br>
+		  	<li> A lagrangiana do sistema em função das coordenadas generalizadas, $r$ e $θ$, e de 
+        suas respectivas velocidades, $\dot{r}$ e $\dot{θ}$, é dada por 
+        $L = \frac{1}{2} m(1 + 4\alpha^2r^2)\dot{r}^2 + \frac{1}{2} mr^2 \dot{\theta}^2 − mg\alpha r^2$.</br>
+
+		  	<li> Como a coordenada $\theta$ é cíclica, o momento angular conjugado $p_\theta = mr^2\dot{\theta}$ é uma constante de movimento.</br>
+		  	<li> O potencial efetivo associado ao movimento radial da partícula é $V_{eff} = p^2θ^2mr^2 + mg\alpha r^2$.</ol>
 			
 			Assinale a alternativa correta`,
 			image: '2026-2/mc-4.webp'
@@ -193,7 +217,16 @@ export default <Question[]>[
 		},
 		questionNumber: 5,
 		statement: {
-			text: String.raw`Um disco de raio $R$ pode girar em torno de um eixo vertical que passa por seu centro. Um pequeno bloco de massa $m$ é colocado sobre o disco, junto à sua borda, a uma distância $R$ do eixo de rotação. Inicialmente, o disco e o bloco estão em repouso. A partir de certo instante, o disco passa a girar com aceleração angular constante $\alpha$, conforme ilustrado na figura. Devido ao atrito estático entre o bloco e o disco, caracterizado pelo coeficiente $\mu_e$, o bloco inicialmente permanece em repouso em relação ao disco, girando junto com ele, com a mesma aceleração angular. Quando a velocidade angular atinge um valor crítico, o atrito estático não é mais suficiente para manter esse movimento e o bloco começa a deslizar sobre o disco. Determine o deslocamento angular $\Delta \theta$ realizado pelo disco desde o início do movimento até o instante em que o bloco começa a deslizar. Considere que $\alpha < \mu_e g/R$, onde $g$ é a aceleração da gravidade.`,
+			text: String.raw`Um disco de raio $R$ pode girar em torno de um eixo vertical que passa por 
+      seu centro. Um pequeno bloco de massa $m$ é colocado sobre o disco, junto à sua borda, a uma 
+      distância $R$ do eixo de rotação. Inicialmente, o disco e o bloco estão em repouso. A partir de 
+      certo instante, o disco passa a girar com aceleração angular constante $\alpha$, conforme 
+      ilustrado na figura. Devido ao atrito estático entre o bloco e o disco, caracterizado pelo coeficiente 
+      $\mu_e$, o bloco inicialmente permanece em repouso em relação ao disco, girando junto com ele, com a 
+      mesma aceleração angular. Quando a velocidade angular atinge um valor crítico, o atrito estático não é 
+      mais suficiente para manter esse movimento e o bloco começa a deslizar sobre o disco. Determine o 
+      deslocamento angular $\Delta \theta$ realizado pelo disco desde o início do movimento até o instante 
+      em que o bloco começa a deslizar. Considere que $\alpha < \mu_e g/R$, onde $g$ é a aceleração da gravidade.`,
 			image: '2026-2/mc-5.webp'
 		},
 		alternatives: [
@@ -659,6 +692,179 @@ export default <Question[]>[
 			},
 			{
 				text: String.raw`$W_c=0$`,
+				number: QuestionAlternative.E
+			}
+		]
+	},
+	{
+		...defaultData,
+		version: Version.A,
+		area: Area.Termodinamica,
+		tags: tagsForArea<Area.Termodinamica>(TagTD.TrabalhoPrimeiraLei),
+		help: {
+			youtubeVideoId: videos[Area.Termodinamica]
+		},
+		questionNumber: 3,
+		statement: {
+			text: String.raw`Para 1 mol de um gás ideal de capacidade térmica a volume constante $C_v$ , a energia livre de Helmholtz $F (T, V )$ é dada por: 
+          $$F (T, V ) = C_v T\left[ 1 − \ln\left(\frac{T}{T0}\right)\right]  − RT \ln\left(\frac{V}{V0}\right)− T S_0,$$
+onde $T_0$,$S_0$ e $V_0$ denotam valores constantes. O gás é submetido a uma expansão isotérmica reversível à temperatura $T$, alterando seu volume de $V_1$ para $5V_1$. O trabalho $W$ realizado pelo gás ao longo do processo acima vale`
+		},
+		alternatives: [
+			{
+				text: String.raw`$W=RT\ln5$`,
+				number: QuestionAlternative.A
+			},
+			{
+				text: String.raw`$W=-RT\ln 5$`,
+				number: QuestionAlternative.B
+			},
+			{
+				text: String.raw`$W=C_v T\ln 5$`,
+				number: QuestionAlternative.C
+			},
+			{
+				text: String.raw`$W=-C_v T\ln 5$`,
+				number: QuestionAlternative.D
+			},
+			{
+				text: String.raw`$W=0$`,
+				number: QuestionAlternative.E
+			}
+		]
+	},
+	{
+		...defaultData,
+		version: Version.A,
+		area: Area.Termodinamica,
+		tags: tagsForArea<Area.Termodinamica>(TagTD.TrabalhoPrimeiraLei),
+		help: {
+			youtubeVideoId: videos[Area.Termodinamica]
+		},
+		questionNumber: 4,
+		statement: {
+			text: String.raw`De acordo com a Termodinâmica, a função entropia $S(U, V, N )$ descrevendo um sistema qualquer deve satisfazer as seguintes propriedades: 
+      <ol type='a'>
+        <li> Extensividade: $S(\lambda U, \lambda V, \lambda N ) = \lambda S(U, V, N )$ para $\lambda > 0$.
+        <li> Temperatura positiva:  $\left(\frac{\partial S}{\partial U}\right)_{V,N} = \frac{1}{T} > 0$.
+        <li> Estabilidade (concavidade): $\left(\frac{\partial^2 S}{\partial U^2}\right)_{V,N} < 0$ (garante $C_v > 0$).
+
+    </ol>
+Sendo $A > 0$ uma constante, assinale a alternativa termodinamicamente consistente para $U, V, N > 0$:`
+		},
+		alternatives: [
+			{
+				text: String.raw`$S(U,V,N)=A(UVN)^{1/3}$`,
+				number: QuestionAlternative.A
+			},
+			{
+				text: String.raw`$S(U,V,N)=A\frac{U^2V}{N^2}$`,
+				number: QuestionAlternative.B
+			},
+			{
+				text: String.raw`$S(U,V,N)=A\left(\frac{N^3}{UV}\right)$`,
+				number: QuestionAlternative.C
+			},
+			{
+				text: String.raw`$S(U,V,N)=A\left(\frac{N^3V}{U}\right)^{1/2}$`,
+				number: QuestionAlternative.D
+			},
+			{
+				text: String.raw`$S(U,V,N)=A\left(\frac{UV^2}{N}\right)^{1/3}$`,
+				number: QuestionAlternative.E
+			}
+		]
+	},
+	{
+		...defaultData,
+		version: Version.A,
+		area: Area.FisicaModerna,
+		tags: tagsForArea<Area.FisicaModerna>(TagFM.EnergiaMomentoRelativisticos),
+		help: {
+			youtubeVideoId: videos[Area.FisicaModerna]
+		},
+		questionNumber: 1,
+		statement: {
+			text: String.raw`Considere a situação ilustrada na figura. Uma fonte de luz S desconhecida é diretamente
+      detectada pelo espectrômetro $D1$. Parte da luz é espalhada por um meio frio $M$ e detectada pelo espectrômetro
+      $D2$. Finalmente, a luz de $S$ que atravessa $M$ é detectada pelo espectrômetro $D3$. Considere que os espectrômetros 
+      estão perfeitamente calibrados. Assinale a alternativa abaixo que consistentemente representa os espectros da 
+      luz (intensidade por comprimento de onda $\lambda$, em unidades arbitrárias) em $D1$, $D2$ e $D3$, respectivamente.`,
+			image: '2026-2/fm-1.webp'
+		},
+		alternatives: [
+			{
+				text: String.raw`
+          <img src="/assets/images/2026-2/fm-1a1.webp" style="height: 150px"/>, 
+          <img src="/assets/images/2026-2/fm-1a1.webp" style="height: 150px"/>  e  
+          <img src="/assets/images/2026-2/fm-1a3.webp" style="height: 150px"/>, `,
+				number: QuestionAlternative.A
+			},
+			{
+				text: String.raw`
+          <img src="/assets/images/2026-2/fm-1b1.webp" style="height: 150px"/>, 
+          <img src="/assets/images/2026-2/fm-1b1.webp" style="height: 150px"/>  e  
+          <img src="/assets/images/2026-2/fm-1b3.webp" style="height: 150px"/>, `,
+				number: QuestionAlternative.B
+			},
+			{
+				text: String.raw`
+          <img src="/assets/images/2026-2/fm-1c1.webp" style="height: 150px"/>, 
+          <img src="/assets/images/2026-2/fm-1c1.webp" style="height: 150px"/>  e  
+          <img src="/assets/images/2026-2/fm-1c3.webp" style="height: 150px"/>, `,
+				number: QuestionAlternative.C
+			},
+			{
+				text: String.raw`
+          <img src="/assets/images/2026-2/fm-1d1.webp" style="height: 150px"/>, 
+          <img src="/assets/images/2026-2/fm-1d1.webp" style="height: 150px"/>  e  
+          <img src="/assets/images/2026-2/fm-1d3.webp" style="height: 150px"/>, `,
+				number: QuestionAlternative.D
+			},
+			{
+				text: String.raw`
+          <img src="/assets/images/2026-2/fm-1e1.webp" style="height: 150px"/>, 
+          <img src="/assets/images/2026-2/fm-1e1.webp" style="height: 150px"/>  e  
+          <img src="/assets/images/2026-2/fm-1e3.webp" style="height: 150px"/>, `,
+				number: QuestionAlternative.E
+			}
+		]
+	},
+	{
+		...defaultData,
+		version: Version.A,
+		area: Area.FisicaModerna,
+		tags: tagsForArea<Area.FisicaModerna>(TagFM.EnergiaMomentoRelativisticos),
+		help: {
+			youtubeVideoId: videos[Area.FisicaModerna]
+		},
+		questionNumber: 2,
+		statement: {
+			text: String.raw`Uma molécula é formada por dois átomos idênticos de massa m. O potencial 
+      efetivo de interação entre os átomos é $V (r) = V_0 \left[\left(\frac{a}{r}\right)^{2\alpha} − 2 \left(\frac{a}{r}\right)^\alpha\right]$, onde $V_0$, 
+      $\alpha$ e $a$ são constantes positivas e $r$ é a distância entre os átomos. Qual é a diferença 
+      de energia entre o estado fundamental e o primeiro estado rotacional excitado dessa molécula? 
+      Assuma que $V_0$ é suficientemente grande e que o tamanho do átomo é muito menor que $a$.`
+		},
+		alternatives: [
+			{
+				text: String.raw`$\frac{2\hbar^2}{ma^2}$`,
+				number: QuestionAlternative.A
+			},
+			{
+				text: String.raw`$\frac{1}{2}V_0$`,
+				number: QuestionAlternative.B
+			},
+			{
+				text: String.raw`$\frac{\alpha\hbar^2}{ma^2}$`,
+				number: QuestionAlternative.C
+			},
+			{
+				text: String.raw`$\hbar\sqrt{\frac{2\alpha(3\alpha+1)V_0}{ma^2}}$`,
+				number: QuestionAlternative.D
+			},
+			{
+				text: String.raw`$\hbar\sqrt{\frac{\alpha(\alpha+1)V_0}{ma^2}}$`,
 				number: QuestionAlternative.E
 			}
 		]
