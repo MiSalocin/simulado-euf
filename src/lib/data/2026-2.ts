@@ -1554,7 +1554,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.FisicaEstatistica,
-		tags: tagsForArea<Area.FisicaEstatistica>(TagFE., TagFE.DescricaoEstatisticaSistemaFisico),
+		tags: tagsForArea<Area.FisicaEstatistica>(TagFE.DescricaoEstatisticaSistemaFisico),
 		help: {
 			youtubeVideoId: videos[Area.FisicaEstatistica]
 		},
