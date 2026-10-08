@@ -1,6 +1,6 @@
 import { Area } from '$lib/models/area';
 import { QuestionAlternative, Version, type Question } from '$lib/models/question';
-import { tagsForArea, TagEM, TagFM, TagMC, TagTD } from '$lib/models/subareas';
+import { tagsForArea, TagEM, TagFM, TagMC, TagTD, TagMQ } from '$lib/models/subareas';
 
 const defaultData = {
 	year: 2026,
@@ -362,6 +362,7 @@ export default <Question[]>[
 			}
 		]
 	},
+
 	{
 		...defaultData,
 		version: Version.A,
@@ -618,6 +619,7 @@ export default <Question[]>[
 			}
 		]
 	},
+
 	{
 		...defaultData,
 		version: Version.A,
@@ -779,6 +781,7 @@ export default <Question[]>[
 			}
 		]
 	},
+
 	{
 		...defaultData,
 		version: Version.A,
@@ -834,13 +837,13 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.FisicaModerna,
-		tags: tagsForArea<Area.FisicaModerna>(TagFM.FotonsPropriedadesCorpusculares),
+		tags: tagsForArea<Area.FisicaModerna>(TagFM.ModeloRutherfordEstabilidadeAtomos),
 		help: {
 			youtubeVideoId: videos[Area.FisicaModerna]
 		},
 		questionNumber: 2,
 		statement: {
-			text: String.raw`Uma molécula é formada por dois átomos idênticos de massa m. O potencial efetivo de interação entre os átomos é $V (r) = V_0 \left[\left(\frac{a}{r}\right)^{2\alpha} − 2 \left(\frac{a}{r}\right)^\alpha\right]$, onde $V_0$, $\alpha$ e $a$ são constantes positivas e $r$ é a distância entre os átomos. Qual é a diferença de energia entre o estado fundamental e o primeiro estado rotacional excitado dessa molécula? Assuma que $V_0$ é suficientemente grande e que o tamanho do átomo é muito menor que $a$.`
+			text: String.raw`Uma molécula é formada por dois átomos idênticos de massa $m$. O potencial efetivo de interação entre os átomos é $V (r) = V_0 \left[\left(\frac{a}{r}\right)^{2\alpha} − 2 \left(\frac{a}{r}\right)^\alpha\right]$, onde $V_0$, $\alpha$ e $a$ são constantes positivas e $r$ é a distância entre os átomos. Qual é a diferença de energia entre o estado fundamental e o primeiro estado rotacional excitado dessa molécula? Assuma que $V_0$ é suficientemente grande e que o tamanho do átomo é muito menor que $a$.`
 		},
 		alternatives: [
 			{
@@ -869,7 +872,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.FisicaModerna,
-		tags: tagsForArea<Area.FisicaModerna>(TagFM.FotonsPropriedadesCorpusculares),
+		tags: tagsForArea<Area.FisicaModerna>(TagFM.RadiacaoTermicaCorpoNegroPlanck),
 		help: {
 			youtubeVideoId: videos[Area.FisicaModerna]
 		},
@@ -911,7 +914,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.FisicaModerna,
-		tags: tagsForArea<Area.FisicaModerna>(TagFM.FotonsPropriedadesCorpusculares),
+		tags: tagsForArea<Area.FisicaModerna>(TagFM.EnergiaMomentoRelativisticos),
 		help: {
 			youtubeVideoId: videos[Area.FisicaModerna]
 		},
@@ -946,7 +949,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.FisicaModerna,
-		tags: tagsForArea<Area.FisicaModerna>(TagFM.FotonsPropriedadesCorpusculares),
+		tags: tagsForArea<Area.FisicaModerna>(TagFM.ModeloBohr),
 		help: {
 			youtubeVideoId: videos[Area.FisicaModerna]
 		},
@@ -981,7 +984,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.FisicaModerna,
-		tags: tagsForArea<Area.FisicaModerna>(TagFM.FotonsPropriedadesCorpusculares),
+		tags: tagsForArea<Area.FisicaModerna>(TagFM.AtomosMoleculasSolidos),
 		help: {
 			youtubeVideoId: videos[Area.FisicaModerna]
 		},
@@ -1013,6 +1016,407 @@ export default <Question[]>[
 			},
 			{
 				text: 'As afirmações I, II e III estão corretas.',
+				number: QuestionAlternative.E
+			}
+		]
+	},
+	{
+		...defaultData,
+		version: Version.A,
+		area: Area.FisicaModerna,
+		tags: tagsForArea<Area.FisicaModerna>(TagFM.AtomosMoleculasSolidos),
+		help: {
+			youtubeVideoId: videos[Area.FisicaModerna]
+		},
+		questionNumber: 7,
+		statement: {
+			text: String.raw`Uma partícula de massa $m$ move-se em um plano sob a ação de uma força central atrativa de módulo constante $F = k$, de modo que sua energia potencial é $V (r) = kr$, onde $r$ é a distância à origem e $$k é uma constante positiva. Aplicando as regras de quantização do modelo de Bohr a órbitas circulares, isto é, impondo que o momento angular seja $L = n\hbar$, com $n = 1,2,3, ...$, a velocidade da particula nas órbitas circulares permitidas é`
+		},
+		alternatives: [
+			{
+				text: String.raw`$v_n=\left( \frac{n\hbar k}{m^2} \right)^{1/3}$`,
+				number: QuestionAlternative.A
+			},
+			{
+				text: String.raw`$v_n=\left( \frac{n^2\hbar k}{m^2} \right)^{1/3}$`,
+				number: QuestionAlternative.B
+			},
+			{
+				text: String.raw`$v_n=n\left( \frac{\hbar k}{m^2} \right)^{1/3}$`,
+				number: QuestionAlternative.C
+			},
+			{
+				text: String.raw`$v_n=\left( \frac{n\hbar k}{2m^2} \right)^{1/3}$`,
+				number: QuestionAlternative.D
+			},
+			{
+				text: String.raw`$v_n=\left( \frac{\hbar k}{nm^2} \right)^{1/3}$`,
+				number: QuestionAlternative.E
+			}
+		]
+	},
+	{
+		...defaultData,
+		version: Version.A,
+		area: Area.FisicaModerna,
+		tags: tagsForArea<Area.FisicaModerna>(TagFM.CausalidadeSimultaneidade),
+		help: {
+			youtubeVideoId: videos[Area.FisicaModerna]
+		},
+		questionNumber: 8,
+		statement: {
+			text: String.raw`Dois eventos ocorrem no eixo $x$ de um referencial inercial $S$: o primeiro em $x_1 = 0$ e $t_1 = 0$; o segundo em $x_2 = 500 m$ e $t_2 = 1 \mu s$. Considere $c \times 1 \mu s = 300 m$. A velocidade do referencial inercial $S′$, que se move ao longo do eixo $x$ e no qual os dois eventos são simultâneos, e a distância entre os eventos medida em $S′$ são, respectivamente,`
+		},
+		alternatives: [
+			{
+				text: '$0.60c$ e $400m$',
+				number: QuestionAlternative.A
+			},
+			{
+				text: '$0.80c$ e $540m$',
+				number: QuestionAlternative.B
+			},
+			{
+				text: '$0.80c$ e $300m$',
+				number: QuestionAlternative.C
+			},
+			{
+				text: '$0.60c$ e $500m$',
+				number: QuestionAlternative.D
+			},
+			{
+				text: '$0.80c$ e $625m$',
+				number: QuestionAlternative.E
+			}
+		]
+	},
+
+	{
+		...defaultData,
+		version: Version.A,
+		area: Area.MecanicaQuantica,
+		tags: tagsForArea<Area.MecanicaQuantica>(TagMQ.IntroducaoIdeiasFundamentais),
+		help: {
+			youtubeVideoId: videos[Area.MecanicaQuantica]
+		},
+		questionNumber: 1,
+		statement: {
+			text: String.raw`Dois observáveis, $A$ e $B$, são representados por operadores hermitianos $\^A$ e $\^B$, respectivamente. Os autoestados de $A$ são $\ket{a_1}$ e $\ket{a_2}$, com respectivos autovalores distintos $a_1$ e $a_2$. Os autoestados de $\^B$ são
+
+			$$\ket{b_1} = \frac{\ket{a_1}+2\ket{a_2}}{\sqrt{5}}$$
+			e
+			$$\ket{b_2} = \frac{2\ket{a_1}-\ket{a_2}}{\sqrt{5}}$$
+
+			com respectivos autovalores distintos $b_1$ e $b_2$. Uma partícula é inicialmente preparada no estado \ket{b_1}. Em seguida, são realizadas duas medidas projetivas, primeiro do observável $A$ e depois do observável $B$. Qual é a probabilidade de que o resultado da segunda medida seja $b_1$, independentemente do resultado obtido na primeira medida?`
+		},
+		alternatives: [
+			{
+				text: String.raw`$\frac{17}{25}$`,
+				number: QuestionAlternative.A
+			},
+			{
+				text: String.raw`$\frac{4}{5}$`,
+				number: QuestionAlternative.B
+			},
+			{
+				text: String.raw`$\frac{1}{5}$`,
+				number: QuestionAlternative.C
+			},
+			{
+				text: String.raw`$0$`,
+				number: QuestionAlternative.D
+			},
+			{
+				text: String.raw`$1$`,
+				number: QuestionAlternative.E
+			}
+		]
+	},
+	{
+		...defaultData,
+		version: Version.A,
+		area: Area.MecanicaQuantica,
+		tags: tagsForArea<Area.MecanicaQuantica>(TagMQ.IntroducaoIdeiasFundamentais),
+		help: {
+			youtubeVideoId: videos[Area.MecanicaQuantica]
+		},
+		questionNumber: 2,
+		statement: {
+			text: String.raw`Três férmions idênticos de massa $m$ e spin $s = 1/2$ são colocados em um poço de potencial quadrado infinito bidimensional de lado $2a$. Os níveis de energia de partícula única deste sistema, independentes da projeção de spin, são 
+			
+			$$E(n_x,n_y ) = \frac{\hbar^2 \pi^2(n^2_x + n^2_y)}{8ma^2},$$
+			
+			onde $\hbar$ é a constante de Planck dividida por $2\pi$ e $n_x$ e $n_y$ assumem valores inteiros positivos, $n_x,n_y = 1,2,3, ...$. Desprezando os efeitos de interação entre as partículas, determine a energia do estado fundamental $E_0$ do sistema e sua degenerescência $g_0$.`
+		},
+		alternatives: [
+			{
+				text: String.raw`$E_0 = \frac{9\hbar^2\pi^2}{8ma^2}$ e $g_0 = 4$`,
+				number: QuestionAlternative.A
+			},
+			{
+				text: String.raw`$E_0 = \frac{7\hbar^2\pi^2}{8ma^2}$ e $g_0 = 4$`,
+				number: QuestionAlternative.B
+			},
+			{
+				text: String.raw`$E_0 = \frac{7\hbar^2\pi^2}{8ma^2}$ e $g_0 = 2$`,
+				number: QuestionAlternative.C
+			},
+			{
+				text: String.raw`$E_0 = \frac{12\hbar^2\pi^2}{8ma^2}$ e $g_0 = 8$`,
+				number: QuestionAlternative.D
+			},
+			{
+				text: String.raw`$E_0 = \frac{6\hbar^2\pi^2}{8ma^2}$ e $g_0 = 1$`,
+				number: QuestionAlternative.E
+			}
+		]
+	},
+	{
+		...defaultData,
+		version: Version.A,
+		area: Area.MecanicaQuantica,
+		tags: tagsForArea<Area.MecanicaQuantica>(TagMQ.IntroducaoIdeiasFundamentais),
+		help: {
+			youtubeVideoId: videos[Area.MecanicaQuantica]
+		},
+		questionNumber: 3,
+		statement: {
+			text: String.raw`Considere um sistema de três níveis descrito pelo Hamiltoniano
+			
+			$$\^H = \begin{pmatrix}E_0 & \lambda & 0 \\ \lambda & 2E_0 & \lambda \\ 0 & \lambda & 3E_0 \end{pmatrix},$$
+			
+			onde $E_0 > 0$ e $\lambda$ são constantes reais com dimensão de energia e $|\lambda| \ll E_0$. Determine a energia do estado fundamental desse sistema usando teoria de perturbação até a ordem mais baixa não nula em $\lambda$.`
+		},
+		alternatives: [
+			{
+				text: String.raw`$E_0 - \frac{\lambda^2}{E_0}$`,
+				number: QuestionAlternative.A
+			},
+			{
+				text: String.raw`$E_0 + \lambda$`,
+				number: QuestionAlternative.B
+			},
+			{
+				text: String.raw`$E_0 - \frac{\lambda^2}{2E_0}$`,
+				number: QuestionAlternative.C
+			},
+			{
+				text: String.raw`$E_0 + \frac{\lambda^2}{E_0}$`,
+				number: QuestionAlternative.D
+			},
+			{
+				text: String.raw`$E_0 - \frac{2\lambda^2}{E_0}$`,
+				number: QuestionAlternative.E
+			}
+		]
+	},
+	{
+		...defaultData,
+		version: Version.A,
+		area: Area.MecanicaQuantica,
+		tags: tagsForArea<Area.MecanicaQuantica>(TagMQ.IntroducaoIdeiasFundamentais),
+		help: {
+			youtubeVideoId: videos[Area.MecanicaQuantica]
+		},
+		questionNumber: 4,
+		statement: {
+			text: String.raw`Considere uma partícula de spin $s = 1/2$ sujeita a um campo magnético uniforme na direção $x$. O Hamiltoniano desse sistema é dado por
+			
+			$$\^H = \frac{\hbar\omega}{2} \sigma_x = \frac{\hbar\omega}{2} (\ket{+}\bra{−} + \ket{−}\bra{+}).$$
+			
+			Na equação acima, $\ket{+}$ e $\ket{−}$ representam os autoestados do operador $S_z = \frac{\hbar}{2} \sigma_z$ (projeção do spin na direção $z$), $\hbar$ é a constante de Planck dividida por $2\pi$, $\sigma_x$ e $\sigma_z$ são as matrizes de Pauli e $\sigma$ é uma constante com dimensão de frequência associada à intensidade do campo. Determine o valor esperado de $S_z$ em um instante de tempo $t$ considerando que a partícula é preparada em $t = 0$ no estado inicial $\ket{\psi_0} = \ket{−}$.`
+		},
+		alternatives: [
+			{
+				text: String.raw`$-\frac{\hbar}{2}\cos(\omega t)$`,
+				number: QuestionAlternative.A
+			},
+			{
+				text: String.raw`$\frac{\hbar}{2}\cos(\omega t)$`,
+				number: QuestionAlternative.B
+			},
+			{
+				text: String.raw`$-\frac{\hbar}{2}\sin(\omega t)$`,
+				number: QuestionAlternative.C
+			},
+			{
+				text: String.raw`$-\frac{\hbar}{2}$`,
+				number: QuestionAlternative.D
+			},
+			{
+				text: String.raw`$\frac{\hbar}{2}$`,
+				number: QuestionAlternative.E
+			}
+		]
+	},
+	{
+		...defaultData,
+		version: Version.A,
+		area: Area.MecanicaQuantica,
+		tags: tagsForArea<Area.MecanicaQuantica>(TagMQ.IntroducaoIdeiasFundamentais),
+		help: {
+			youtubeVideoId: videos[Area.MecanicaQuantica]
+		},
+		questionNumber: 5,
+		statement: {
+			text: String.raw`Uma partícula de massa $m$ se move no plano $(x,y)$, sujeita apenas ao confinamento por paredes infinitas em $x = 0$ e $x = a$, enquanto a direção $y$ está sujeita à condição periódica de contorno, ou seja, a função de onda satisfaz
+			
+			$$\psi(0,y) = \psi(a,y) = 0,\hspace{10px} \psi(x,y + b) = \psi(x,y).$$
+			
+			Para uma solução separável da forma $\psi(x,y) = X(x)Y(y)$, qual é a energia do estado fundamental do sistema?`
+		},
+		alternatives: [
+			{
+				text: String.raw`$E_0=\frac{\hbar^2\pi^2}{2ma^2}$`,
+				number: QuestionAlternative.A
+			},
+			{
+				text: String.raw`$E_0=\frac{2\hbar^2\pi^2}{mb^2}$`,
+				number: QuestionAlternative.B
+			},
+			{
+				text: String.raw`$E_0=\frac{\hbar^2}{2m}\left(\frac{\pi^2}{a^2} +  \frac{4\pi^2}{b^2}\right)$`,
+				number: QuestionAlternative.C
+			},
+			{
+				text: String.raw`$E_0=\frac{\hbar^2\pi^2}{ma^2}$`,
+				number: QuestionAlternative.D
+			},
+			{
+				text: String.raw`$E_0=0$`,
+				number: QuestionAlternative.E
+			}
+		]
+	},
+	{
+		...defaultData,
+		version: Version.A,
+		area: Area.MecanicaQuantica,
+		tags: tagsForArea<Area.MecanicaQuantica>(TagMQ.IntroducaoIdeiasFundamentais),
+		help: {
+			youtubeVideoId: videos[Area.MecanicaQuantica]
+		},
+		questionNumber: 6,
+		statement: {
+			text: String.raw`Considere uma partícula quântica de massa $m$ em três dimensões espaciais, descrita pelo hamiltoniano 
+			
+			$$\^H = \frac{1}{2m}(\^p^2_x + \^p^2_y + \^p^2_z) + \frac{1}{2}(k_x \^x^2 + k_y \^y^2 + k_z \^z^2) ,$$
+
+			com as únicas relações de comutação não nulas sendo
+			
+			$$[\^x, \^p_x] = [\^y, \^p_y ] = [\^z, \^p_z ] = i\hbar .$$
+			
+			Quais os vínculos sobre as constantes $k_x$, $k_y$ e $k_z$ para que o sistema tenha como quantidades conservadas simultaneamente as componentes $z$ do operador de momento linear, $\^p_z$, e do operador de momento angular, $\^L_z = \^x\^p_y − \^y \^p_x$?`
+		},
+		alternatives: [
+			{
+				text: String.raw`$k_x=k_y$ e $k_z=0$`,
+				number: QuestionAlternative.A
+			},
+			{
+				text: String.raw`$k_x=k_z$ e $k_y=0$`,
+				number: QuestionAlternative.B
+			},
+			{
+				text: String.raw`$k_y=k_z$ e $k_x=0$`,
+				number: QuestionAlternative.C
+			},
+			{
+				text: String.raw`$k_x=k_y=k_z\neq 0$`,
+				number: QuestionAlternative.D
+			},
+			{
+				text: String.raw`$k_y\neq 0$ e $k_x=k_z=0$`,
+				number: QuestionAlternative.E
+			}
+		]
+	},
+	{
+		...defaultData,
+		version: Version.A,
+		area: Area.MecanicaQuantica,
+		tags: tagsForArea<Area.MecanicaQuantica>(TagMQ.IntroducaoIdeiasFundamentais),
+		help: {
+			youtubeVideoId: videos[Area.MecanicaQuantica]
+		},
+		questionNumber: 7,
+		statement: {
+			text: String.raw`Considere dois osciladores harmônicos quânticos independentes em uma dimensão, com frequências $\omega_1$ e $\omega_2$. O espectro de energia do sistema é dado por
+
+			$$E_{n_1,n_2} = \hbar\omega_1\left( n_1 + \frac{1}{2} \right) +\hbar\omega_2\left( n_2 + \frac{1}{2} \right),$$
+			
+			em que $n_1,n_2 = 0,1,2, ...$. Suponha que
+			
+			$$\omega_2 = 2 \omega_1.$$
+			
+			Qual é o menor valor de energia para o qual existem dois estados distintos $(n_1, n_2)$ com a mesma energia? Identifique esses estados.`
+		},
+		alternatives: [
+			{
+				text: String.raw`$E = \frac{7}{2}\hbar\omega_1$, correspondente aos estados $(n_1,n_2) = (2,0)$ e $(0,1)$`,
+				number: QuestionAlternative.A
+			},
+			{
+				text: String.raw`$E = \frac{5}{2}\hbar\omega_1$, correspondente aos estados $(n_1,n_2) = (1,0)$ e $(0,1)$`,
+				number: QuestionAlternative.B
+			},
+			{
+				text: String.raw`$E = \frac{9}{2}\hbar\omega_1$, correspondente aos estados $(n_1,n_2) = (3,0)$ e $(1,1)$`,
+				number: QuestionAlternative.C
+			},
+			{
+				text: String.raw`$E = \frac{3}{2}\hbar\omega_1$, correspondente aos estados $(n_1,n_2) = (0,0)$ e $(1,0)$`,
+				number: QuestionAlternative.D
+			},
+			{
+				text: String.raw`O espectro não apresenta degenerescência para $\omega_2 = 2\omega_1$`,
+				number: QuestionAlternative.E
+			}
+		]
+	},
+	{
+		...defaultData,
+		version: Version.A,
+		area: Area.MecanicaQuantica,
+		tags: tagsForArea<Area.MecanicaQuantica>(TagMQ.IntroducaoIdeiasFundamentais),
+		help: {
+			youtubeVideoId: videos[Area.MecanicaQuantica]
+		},
+		questionNumber: 8,
+		statement: {
+			text: String.raw`Considere uma partícula quântica livre de massa $m$, em uma dimensão espacial, descrita pelo hamiltoniano 
+			
+			$$\^H = \frac{\^p^2}{2m}.$$
+
+			Na representação de Heisenberg, a evolução temporal de um operador $\^A$ é governada por 
+			
+			$$i\hbar\frac{d\^A(t)}{dt} = [\^A(t), \^H] + i\hbar \frac{\partial \^A(t)}{\partial t} ,$$
+			
+			e, em tempos iguais, valem as relações de comutação canônicas 
+			
+			$$[\^x(t),\^p(t)] = i\hbar.$$
+			
+			Observando que $\^p(t) = \^p(0)$, qual é o comutador entre o operador posição no instante $t$ e o operador posição no instante inicial, $[\^x(t),\^x(0)]$?`
+		},
+		alternatives: [
+			{
+				text: String.raw`$-\frac{i\hbar t}{m}$`,
+				number: QuestionAlternative.A
+			},
+			{
+				text: String.raw`$\frac{i\hbar t}{m}$`,
+				number: QuestionAlternative.B
+			},
+			{
+				text: String.raw`$\frac{i\hbar t}{2m}$`,
+				number: QuestionAlternative.C
+			},
+			{
+				text: String.raw`$-\frac{i\hbar t}{2m}$`,
+				number: QuestionAlternative.D
+			},
+			{
+				text: String.raw`$0$`,
 				number: QuestionAlternative.E
 			}
 		]
