@@ -1,6 +1,6 @@
 import { Area } from '$lib/models/area';
 import { QuestionAlternative, Version, type Question } from '$lib/models/question';
-import { tagsForArea, TagEM, TagFM, TagMC, TagTD, TagMQ } from '$lib/models/subareas';
+import { tagsForArea, TagEM, TagFM, TagMC, TagTD, TagMQ, TagFE } from '$lib/models/subareas';
 
 const defaultData = {
 	year: 2026,
@@ -1136,7 +1136,9 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.MecanicaQuantica,
-		tags: tagsForArea<Area.MecanicaQuantica>(TagMQ.IntroducaoIdeiasFundamentais),
+		tags: tagsForArea<Area.MecanicaQuantica>(
+			TagMQ.ParticulasIdenticas, 
+			TagMQ.PotenciaisUnidimensionais),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
@@ -1175,7 +1177,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.MecanicaQuantica,
-		tags: tagsForArea<Area.MecanicaQuantica>(TagMQ.IntroducaoIdeiasFundamentais),
+		tags: tagsForArea<Area.MecanicaQuantica>(TagMQ.TeoriaPerturbacaoIndependenteTempo),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
@@ -1214,7 +1216,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.MecanicaQuantica,
-		tags: tagsForArea<Area.MecanicaQuantica>(TagMQ.IntroducaoIdeiasFundamentais),
+		tags: tagsForArea<Area.MecanicaQuantica>(TagMQ.FormalizacaoPostuladosHeisenberg),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
@@ -1224,7 +1226,7 @@ export default <Question[]>[
 			
 			$$\^H = \frac{\hbar\omega}{2} \sigma_x = \frac{\hbar\omega}{2} (\ket{+}\bra{−} + \ket{−}\bra{+}).$$
 			
-			Na equação acima, $\ket{+}$ e $\ket{−}$ representam os autoestados do operador $S_z = \frac{\hbar}{2} \sigma_z$ (projeção do spin na direção $z$), $\hbar$ é a constante de Planck dividida por $2\pi$, $\sigma_x$ e $\sigma_z$ são as matrizes de Pauli e $\sigma$ é uma constante com dimensão de frequência associada à intensidade do campo. Determine o valor esperado de $S_z$ em um instante de tempo $t$ considerando que a partícula é preparada em $t = 0$ no estado inicial $\ket{\psi_0} = \ket{−}$.`
+			Na equação acima, $\ket{+}$ e $\ket{−}$ representam os autoestados do operador $S_z = \frac{\hbar}{2} \sigma_z$ (projeção do spin na direção $z$), $\hbar$ é a constante de Planck dividida por $2\pi$, $\sigma_x$ e $\sigma_z$ são as matrizes de Pauli e $\omega$ é uma constante com dimensão de frequência associada à intensidade do campo. Determine o valor esperado de $S_z$ em um instante de tempo $t$ considerando que a partícula é preparada em $t = 0$ no estado inicial $\ket{\psi_0} = \ket{−}$.`
 		},
 		alternatives: [
 			{
@@ -1253,7 +1255,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.MecanicaQuantica,
-		tags: tagsForArea<Area.MecanicaQuantica>(TagMQ.IntroducaoIdeiasFundamentais),
+		tags: tagsForArea<Area.MecanicaQuantica>(TagMQ.PotenciaisUnidimensionais, TagMQ.AparatoMatematicoSchrodinger),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
@@ -1292,7 +1294,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.MecanicaQuantica,
-		tags: tagsForArea<Area.MecanicaQuantica>(TagMQ.IntroducaoIdeiasFundamentais),
+		tags: tagsForArea<Area.MecanicaQuantica>(TagMQ.SchrodingerTresDimensoesMomentoAngular),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
@@ -1335,7 +1337,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.MecanicaQuantica,
-		tags: tagsForArea<Area.MecanicaQuantica>(TagMQ.IntroducaoIdeiasFundamentais),
+		tags: tagsForArea<Area.MecanicaQuantica>(TagMQ.OsciladorHarmonicoUnidimensional),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
@@ -1378,7 +1380,7 @@ export default <Question[]>[
 		...defaultData,
 		version: Version.A,
 		area: Area.MecanicaQuantica,
-		tags: tagsForArea<Area.MecanicaQuantica>(TagMQ.IntroducaoIdeiasFundamentais),
+		tags: tagsForArea<Area.MecanicaQuantica>(TagMQ.FormalizacaoPostuladosHeisenberg),
 		help: {
 			youtubeVideoId: videos[Area.MecanicaQuantica]
 		},
@@ -1417,6 +1419,172 @@ export default <Question[]>[
 			},
 			{
 				text: String.raw`$0$`,
+				number: QuestionAlternative.E
+			}
+		]
+	},
+
+
+	{
+		...defaultData,
+		version: Version.A,
+		area: Area.FisicaEstatistica,
+		tags: tagsForArea<Area.FisicaEstatistica>(TagFE.EnsembleMicrocanonico),
+		help: {
+			youtubeVideoId: videos[Area.FisicaEstatistica]
+		},
+		questionNumber: 1,
+		statement: {
+			text: String.raw`Dois sólidos de Einstein, $A$ e $B$, formam um sistema isolado. O sólido $A$ possui $N_A = 2$ osciladores, enquanto o sólido $B$ possui $N_B = 3$ osciladores. A energia total do sistema corresponde a $q = q_A + q_B = 3$ quanta de energia, que podem ser distribuídos entre os dois sólidos, onde $q_A$ e $q_B$ são, respectivamente, os números de quanta de energia dos sistemas $A$ e $B$.
+			Para um sólido de Einstein com $N$ osciladores e q quanta de energia, o número de microestados é
+			
+			$$\Omega(N,q) =\begin{pmatrix} q+N-1 \\ q \end{pmatrix}$$
+
+			Admitindo que todos os microestados acessíveis do sistema composto sejam igualmente prováveis, qual é a probabilidade de que $q_A = 1$?`
+		},
+		alternatives: [
+			{
+				text: String.raw`$\frac{12}{35}$`,
+				number: QuestionAlternative.A
+			},
+			{
+				text: String.raw`$\frac{1}{2}$`,
+				number: QuestionAlternative.B
+			},
+			{
+				text: String.raw`$\frac{4}{35}$`,
+				number: QuestionAlternative.C
+			},
+			{
+				text: String.raw`$\frac{9}{25}$`,
+				number: QuestionAlternative.D
+			},
+			{
+				text: String.raw`$\frac{2}{7}$`,
+				number: QuestionAlternative.E
+			}
+		]
+	},
+	{
+		...defaultData,
+		version: Version.A,
+		area: Area.FisicaEstatistica,
+		tags: tagsForArea<Area.FisicaEstatistica>(TagFE.EnsembleCanonico, TagFE.DescricaoEstatisticaSistemaFisico),
+		help: {
+			youtubeVideoId: videos[Area.FisicaEstatistica]
+		},
+		questionNumber: 2,
+		statement: {
+			text: String.raw`Considere um conjunto de átomos idênticos, independentes, localizados e não interagentes em equilíbrio térmico com um reservatório à temperatura $T$ . Cada átomo pode estar em um de dois níveis de energia não degenerados,
+			
+			$$E_0 = 0,\hspace{15px} E_1 = \varepsilon,\hspace{15px} \varepsilon > 0.$$
+			
+			Uma medida espectroscópica permite determinar as populações médias dos dois níveis e mostra que
+			
+			$$\frac{N_1}{N_0} = \frac{1}{3},$$
+
+			onde $N_0$ e $N_1$ são, respectivamente, os números médios de átomos encontrados no estado fundamental e no estado excitado. Qual é a temperatura $T$ do sistema?`
+		},
+		alternatives: [
+			{
+				text: String.raw`$T=\frac{\varepsilon}{k_b \ln{3}}$`,
+				number: QuestionAlternative.A
+			},
+			{
+				text: String.raw`$T=\frac{\varepsilon}{3k_b}$`,
+				number: QuestionAlternative.B
+			},
+			{
+				text: String.raw`$T=\frac{\varepsilon \ln{3}}{k_b}$`,
+				number: QuestionAlternative.C
+			},
+			{
+				text: String.raw`$T=\frac{3 \varepsilon}{k_b}$`,
+				number: QuestionAlternative.D
+			},
+			{
+				text: String.raw`$T=\frac{\varepsilon}{k_b \ln{2}}$`,
+				number: QuestionAlternative.E
+			}
+		]
+	},
+	{
+		...defaultData,
+		version: Version.A,
+		area: Area.FisicaEstatistica,
+		tags: tagsForArea<Area.FisicaEstatistica>(TagFE.DescricaoEstatisticaSistemaFisico),
+		help: {
+			youtubeVideoId: videos[Area.FisicaEstatistica]
+		},
+		questionNumber: 3,
+		statement: {
+			text: String.raw`Considere um gás de elétrons em equilíbrio térmico e químico. A ocupação média de um estado de energia $\epsilon$ é dada pela distribuição de Fermi–Dirac, 
+			$$f (\varepsilon) = \frac{1}{e^{\beta(\varepsilon−\mu)} + 1} ,\hspace{15px} \beta = \frac{1}{k_B T} ,$$
+			
+			onde $\mu$ é o potencial químico. A contribuição entrópica associada à possibilidade de esse estado estar ocupado ou vazio é 
+			
+			$$s(\varepsilon) = −k_B [f \ln{f} + (1 − f ) \ln{(1 − f )}] .$$
+			
+			Qual das afirmações abaixo a respeito das contribuições para a entropia eletrônica de um metal a temperaturas $0 < T\ll E_F/k_B$, onde $E_F \approx \mu$ é a energia de Fermi, é a correta?`
+		},
+		alternatives: [
+			{
+				text: 'A principal contribuição vem de estados em uma faixa de energia da ordem de $k_B T$ em torno do potencial químico.',
+				number: QuestionAlternative.A
+			},
+			{
+				text: 'Todos os elétrons com energias abaixo da energia de Fermi contribuem aproximadamente da mesma forma para a entropia.',
+				number: QuestionAlternative.B
+			},
+			{
+				text: 'A principal contribuição vem de estados muito acima da energia de Fermi, pois esses estados possuem maior energia.',
+				number: QuestionAlternative.C
+			},
+			{
+				text: 'A entropia eletrônica é produzida principalmente pelos estados completamente ocupados abaixo da energia de Fermi.',
+				number: QuestionAlternative.D
+			},
+			{
+				text: 'A entropia eletrônica permanece nula para qualquer temperatura enquanto o gás obedecer à estatística de Fermi–Dirac.',
+				number: QuestionAlternative.E
+			}
+		]
+	},
+	{
+		...defaultData,
+		version: Version.A,
+		area: Area.FisicaEstatistica,
+		tags: tagsForArea<Area.FisicaEstatistica>(TagFE., TagFE.DescricaoEstatisticaSistemaFisico),
+		help: {
+			youtubeVideoId: videos[Area.FisicaEstatistica]
+		},
+		questionNumber: 4,
+		statement: {
+			text: String.raw`Considere dois spins de Ising, $\sigma_i = \pm 1\ (i = 1,2)$, em equilíbrio térmico com um reservatório à temperatura $T$ . O hamiltoniano do sistema é
+
+			$$H = −J \sigma_1 \sigma_2,\hspace{15px} J > 0.$$
+			
+			Considerando que $\beta = \frac{1}{k_B T}$ , qual das alternativas abaixo fornece corretamente a entropia do sistema?`
+		},
+		alternatives: [
+			{
+				text: String.raw`$S = k_B [\ln (4 \cosh(\beta J)) − \beta J \tanh(βJ)]$`,
+				number: QuestionAlternative.A
+			},
+			{
+				text: String.raw`$S = k_B \ln [4 \cosh(\beta J)]$`,
+				number: QuestionAlternative.B
+			},
+			{
+				text: String.raw`$S = k_B [\ln (4 \cosh(\beta J)) + \beta J \tanh(βJ)$`,
+				number: QuestionAlternative.C
+			},
+			{
+				text: String.raw`$S = k_B \beta J \tanh(βJ)]$`,
+				number: QuestionAlternative.D
+			},
+			{
+				text: String.raw`$S = 2k_B \ln 2$`,
 				number: QuestionAlternative.E
 			}
 		]
